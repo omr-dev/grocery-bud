@@ -1,0 +1,17 @@
+:root{
+    --radius:0.4rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --transition: all .3s linear;
+
+}
+.App{
+    width: 90vw;
+    max-width: 56rem;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--light-shadow);
+    transition: var(--transition);
+    padding: 3.2rem;
+    margin: 12.8rem auto 0;
+}
