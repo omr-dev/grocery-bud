@@ -1,0 +1,18 @@
+.clearBar{
+    display: flex;
+}
+.clrBtn{
+    margin: 2rem auto 0;
+    width: 16rem;
+    height: 2.4rem;
+    background: transparent;
+    border-color: transparent;
+    color:#e66b6b;
+    font-size: 1.36rem;
+    letter-spacing: .4rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.clrBtn:hover{
+    color:#bb2525;
+}

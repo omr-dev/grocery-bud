@@ -3,7 +3,7 @@ import styles from './heading.module.css';
 const Heading = () => {
     return (
         <div>
-            <h1>Heading</h1>
+            <h1 className={styles.title}>grocery bud</h1>
         </div>
     );
 };

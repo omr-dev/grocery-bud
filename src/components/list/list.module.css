@@ -1,0 +1,38 @@
+.listContainer{
+    margin-top: 3.2rem;
+}
+.listItem{
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem 1.6rem;
+    margin-bottom: .8rem;
+    color: #102a42;
+    letter-spacing: .2rem;
+    transition: var(--transition);
+}
+.listItem:hover{
+    background: #f1f5f8;
+    color:#617d98;
+}
+.btn{
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 1.12rem;
+    margin: 0 .24rem;
+    transition: var(--transition);
+
+
+}
+.editBtn{
+    color: #6be675;;
+}
+.editBtn:hover{
+    color:#25bb32;
+}
+.deleteBtn{
+    color: #e66b6b;
+}
+.deleteBtn:hover{
+    color:#bb2525;
+}
