@@ -1,0 +1,33 @@
+.addBar{
+display: flex;
+    justify-content: center;
+}
+.input{
+    flex-grow: 1;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    border: transparent;
+padding: .4rem .4rem .4rem 1.6rem;
+    background:#f1f5f8 ;
+    font-size: 1.6rem;
+    color: #617d98;
+    line-height: 1.5;
+}
+.btn{
+    background:#a5d5f8;
+    border-color: transparent;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    letter-spacing: .2rem;
+    padding: .4rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.36rem;
+
+
+}
+.btn:hover{
+    background: #49a6e9;
+    color: #fff;
+
+}
