@@ -1,8 +1,12 @@
 import styles from './clearBar.module.css';
-
-const ClearBar = ({setList, showMessage}) => {
+import {Message} from '../../App';
+type PropsClearBar={
+    setList:(list:null)=>void,
+    showMessage:(message:Message)=>void,
+}
+const ClearBar = ({setList, showMessage}:PropsClearBar) => {
     const clearItems=()=>{
-        setList([]);
+        setList(null);
         showMessage({text:"Empty List", variant:"danger"})
     }
     return (

@@ -1,14 +1,23 @@
 import styles from './addBar.module.css';
-import {useEffect, useState} from 'react';
+import {FormEvent, useEffect, useState} from 'react';
+import { Message } from '../../App';
+type PropsAddBar={
+    list:string[]|null,
+    setList:(newList:string[])=>void,
+    itemToEdit:number|null,
+    setItemToEdit:(id:number|null)=>void,
+    showMessage:(message:Message)=>void
+}
 
-const AddBar = ({list, setList,itemToEdit,setItemToEdit,showMessage}) => {
-    const [input, setInput] = useState(itemToEdit?list[itemToEdit]:"");
+const AddBar = ({list, setList,itemToEdit,setItemToEdit,showMessage}:PropsAddBar) => {
+    const [input, setInput] = useState((itemToEdit&&list)?list[itemToEdit]:"");
     useEffect(()=>{
-         setInput(list[itemToEdit]); //find another solution
+        if(list && itemToEdit) setInput(list[itemToEdit]); //find another solution
     },[itemToEdit]);
-    const handleSubmit=(e)=>{
+    const handleSubmit=(e:FormEvent)=>{
         e.preventDefault();
         if(input==="") return;
+        if(list){
         if(itemToEdit!==null){
             const newList=[...list];
             newList[itemToEdit]= input;
@@ -22,6 +31,7 @@ const AddBar = ({list, setList,itemToEdit,setItemToEdit,showMessage}) => {
             setList([input,...list])
             showMessage({text:"Item added successfully.",variant:"success"});
 
+        }
         }
         setInput("");
 

@@ -6,10 +6,13 @@ import ClearBar from './components/clearBar/ClearBar';
 import MessageBar from './components/messageBar/MessageBar';
 import {useEffect, useRef, useState} from 'react';
 
+export type Message={text:string,variant:string};
+
+
 function App() {
-    const [list, setList] = useState([]);
-    const [message, setMessage] = useState(null);
-    const [itemToEdit, setItemToEdit] = useState(null);
+    const [list, setList] = useState<string[]|null>(null);
+    const [message, setMessage] = useState<Message|null>(null);
+    const [itemToEdit, setItemToEdit] = useState<number|null>(null);
     const isFirstRender = useRef(true);
     useEffect(() => {
 
@@ -28,7 +31,7 @@ function App() {
             localStorage.setItem("items", JSON.stringify(list));
         }
     }, [list]);
-    const showMessage = ({text, variant}) => {
+    const showMessage = ({text, variant}:Message) => {
         setMessage({text, variant});
         setTimeout(() => {
             setMessage(null);
@@ -40,7 +43,7 @@ function App() {
             {message && <MessageBar message={message}/>}
             <Heading/>
             <AddBar setList={setList} list={list} itemToEdit={itemToEdit} setItemToEdit={setItemToEdit} showMessage={showMessage}/>
-            {list.length > 0 && <>
+            {list && <>
                 <List list={list} setItemToEdit={setItemToEdit} setList={setList} showMessage={showMessage}/>
                 <ClearBar setList={setList} showMessage={showMessage}/></>}
 

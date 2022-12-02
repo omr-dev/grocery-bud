@@ -1,10 +1,10 @@
 import styles from './messageBar.module.css';
-type MessageVariant="danger"|"success";
+
 
 type PropsMessageBar={
     message:{
         text:string,
-        variant:MessageVariant
+        variant:string
     }
 }
 const MessageBar = ({message}:PropsMessageBar) => {

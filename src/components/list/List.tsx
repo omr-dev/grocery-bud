@@ -1,9 +1,15 @@
 import styles from './list.module.css';
 import {FaEdit} from 'react-icons/fa'
 import{FaTrash} from 'react-icons/fa'
-
-const List = ({list,setItemToEdit, setList,showMessage}) => {
-    const removeItem=(index)=>{
+import {Message} from '../../App';
+type PropsList={
+    list:string[],
+    setItemToEdit:(id:number)=>void,
+    setList:(list:string[])=>void,
+    showMessage:(message:Message)=>void,
+}
+const List = ({list,setItemToEdit, setList,showMessage}:PropsList) => {
+    const removeItem=(index:number)=>{
         const newList=[...list];
         newList.splice(index,1);
         setList(newList);
